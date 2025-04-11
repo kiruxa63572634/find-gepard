@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Найди</title>
+</head>
+<body style="background-image: url(7.png); background-size: cover;">
+	<style type="text/css">
+		.box1{
+			height: 150px;
+			width: 250px;
+			background-image: url("1.png");
+			background-size: 100%;
+			position: absolute;
+			transition: 1s;
+		}
+		.box2{
+			height: 150px;
+			width: 250px;
+			background-image: url("2.png");
+			background-size: 100%;
+			position: absolute;
+			transition: 1s;
+		}
+		.box3{
+			height: 150px;
+			width: 250px;
+			background-image: url("3.png");
+			background-size: 100%;
+			position: absolute;
+			transition: 1s;
+		}
+		.box4{
+			height: 150px;
+			width: 250px;
+			background-image: url("4.png");
+			background-size: 100%;
+			position: absolute;
+			transition: 1s;
+		}
+		.box5{
+			height: 150px;
+			width: 250px;
+			background-image: url("5.png");
+			background-size: 100%;
+			position: absolute;
+			transition: 1s;
+		}
+		.box6{
+			height: 150px;
+			width: 250px;
+			background-image: url("6.png");
+			background-size: 100%;
+			position: absolute;
+			transition: 1s;
+		}
+	</style>
+	<h1 style="color: white;">У тебя <span class="span">3</span> попытки</h1>
+	<h1 style="color: white;">Найди гепарда</h1>
+
+	<button class="btn">Перемешать</button>
+
+	<div class="main">
+		<div class="box1" style="left: 450px; top: 150px;"></div>
+		<div class="box2" style="left: 750px; top: 150px;"></div>
+		<div class="box3" style="left: 1050px; top: 150px;"></div>
+		<div class="box4" style="left: 450px; top: 350px;"></div>
+		<div class="box5" style="left: 750px; top: 350px;"></div>
+		<div class="box6" style="left: 1050px; top: 350px;"></div>
+	</div>
+	
+	<script type="text/javascript">
+
+		let sum = 3
+
+		document.querySelector(".btn").onclick = function(){
+			document.querySelector(".box1").style.background = "black"
+			document.querySelector(".box1").style.left = "750px"
+			document.querySelector(".box1").style.top = "350px"
+			document.querySelector(".box1").onclick = function(){
+				sum = sum - 1
+				document.querySelector(".span").innerHTML = sum
+				if (sum==0){
+					alert("Ты проиграл")
+					document.querySelector(".main").style.display = "none"
+				}
+				alert("Попробуй еще раз")
+			}
+			
+
+			document.querySelector(".box2").style.background = "black"
+			document.querySelector(".box2").style.left = "1050px"
+			document.querySelector(".box2").onclick = function(){
+				sum = sum - 1
+				document.querySelector(".span").innerHTML = sum
+				if (sum==0){
+					alert("Ты проиграл")
+					document.querySelector(".main").style.display = "none"
+				}
+				alert("Попробуй еще раз")
+			}
+
+			document.querySelector(".box3").style.background = "black"
+			document.querySelector(".box3").style.left = "450px"
+			document.querySelector(".box3").style.top = "350px"
+			document.querySelector(".box3").onclick = function(){
+				alert("Молодец, ты нашел!")
+				document.querySelector(".box1").style.backgroundImage = "url(1.png)"
+				document.querySelector(".box1").style.backgroundSize = "100%"
+				document.querySelector(".box2").style.backgroundImage = "url(2.png)"
+				document.querySelector(".box2").style.backgroundSize = "100%"
+				document.querySelector(".box3").style.backgroundImage = "url(3.png)"
+				document.querySelector(".box3").style.backgroundSize = "100%"
+				document.querySelector(".box4").style.backgroundImage = "url(4.png)"
+				document.querySelector(".box4").style.backgroundSize = "100%"
+				document.querySelector(".box5").style.backgroundImage = "url(5.png)"
+				document.querySelector(".box5").style.backgroundSize = "100%"
+				document.querySelector(".box6").style.backgroundImage = "url(6.png)"
+				document.querySelector(".box6").style.backgroundSize = "100%"
+
+			}
+			
+
+			document.querySelector(".box4").style.background = "black"
+			document.querySelector(".box4").style.left = "1050px"
+			document.querySelector(".box4").style.top = "350px"
+			document.querySelector(".box4").onclick = function(){
+				sum = sum - 1
+				document.querySelector(".span").innerHTML = sum
+				if (sum==0){
+					alert("Ты проиграл")
+					document.querySelector(".main").style.display = "none"
+				}
+				alert("Попробуй еще раз")
+			}
+
+			document.querySelector(".box5").style.background = "black"
+			document.querySelector(".box5").style.left = "450px"
+			document.querySelector(".box5").style.top = "150px"
+			document.querySelector(".box5").onclick = function(){
+				sum = sum - 1
+				document.querySelector(".span").innerHTML = sum
+				if (sum==0){
+					alert("Ты проиграл")
+					document.querySelector(".main").style.display = "none"
+				}
+				alert("Попробуй еще раз")
+			}
+
+			document.querySelector(".box6").style.background = "black"
+			document.querySelector(".box6").style.left = "750px"
+			document.querySelector(".box6").style.top = "150px"
+			document.querySelector(".box6").onclick = function(){
+				sum = sum - 1
+				document.querySelector(".span").innerHTML = sum
+				if (sum==0){
+					alert("Ты проиграл")
+					document.querySelector(".main").style.display = "none"
+				}
+				alert("Попробуй еще раз")
+			}
+		}
+		/*
+		по нажатию на кнопку "перемешать"
+			дивы становятся черными
+		 	меняются местами
+
+		при нажатии на неправильную картинку
+		  алерт(неправильно)
+
+		при нажатии на правильную картинку
+			алерт (молодец)
+			все элементы пропадают
+
+		если попытки заканчиваются 
+			все элементы пропадают
+		*/
+
+	</script>
+</body>
+</html>
